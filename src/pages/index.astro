@@ -2,28 +2,54 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="About Me" description="Personal information and current status">
+<BaseLayout title="Zhu Jiaqi" description="Full-stack developer specializing in Python, Go, and AI-powered solutions">
   <div class="about-page">
     <section class="profile">
       <div class="profile-header">
-        <div class="avatar-placeholder">
-          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="50" cy="50" r="48" fill="currentColor" opacity="0.1" />
-            <circle cx="50" cy="40" r="20" fill="currentColor" opacity="0.3" />
-            <ellipse cx="50" cy="85" rx="30" ry="25" fill="currentColor" opacity="0.3" />
+        <div class="avatar-pixel-art">
+          <!-- Pixel Art Avatar - Creative Developer -->
+          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+            <!-- Background -->
+            <rect x="0" y="0" width="32" height="32" fill="#1a1a2e"/>
+            <!-- Hair -->
+            <rect x="8" y="4" width="16" height="6" fill="#2d2d44"/>
+            <rect x="6" y="6" width="2" height="8" fill="#2d2d44"/>
+            <rect x="24" y="6" width="2" height="8" fill="#2d2d44"/>
+            <!-- Face -->
+            <rect x="8" y="10" width="16" height="10" fill="#f5d0b0"/>
+            <!-- Eyes with glasses -->
+            <rect x="10" y="14" width="4" height="3" fill="#ffffff"/>
+            <rect x="18" y="14" width="4" height="3" fill="#ffffff"/>
+            <rect x="10" y="15" width="2" height="1" fill="#1a1a2e"/>
+            <rect x="18" y="15" width="2" height="1" fill="#1a1a2e"/>
+            <!-- Glasses frame -->
+            <rect x="9" y="13" width="6" height="5" fill="none" stroke="#4a9eff" stroke-width="1"/>
+            <rect x="17" y="13" width="6" height="5" fill="none" stroke="#4a9eff" stroke-width="1"/>
+            <rect x="15" y="15" width="2" height="1" fill="#4a9eff"/>
+            <!-- Mouth -->
+            <rect x="13" y="17" width="6" height="1" fill="#d4a890"/>
+            <!-- Body/Shirt -->
+            <rect x="10" y="20" width="12" height="8" fill="#3d5afe"/>
+            <!-- Tech accessories - headset hint -->
+            <rect x="4" y="8" width="2" height="10" fill="#4a4a6a"/>
+            <rect x="26" y="8" width="2" height="10" fill="#4a4a6a"/>
+            <!-- Glow effect -->
+            <rect x="11" y="14" width="1" height="1" fill="#ffffff" opacity="0.6"/>
+            <rect x="19" y="14" width="1" height="1" fill="#ffffff" opacity="0.6"/>
           </svg>
         </div>
         <h1>Zhu Jiaqi</h1>
-        <p class="tagline">Tech Enthusiast & Full-Stack Developer</p>
+        <p class="tagline">Full-Stack Developer · Python & Go Specialist · AI Enthusiast</p>
+        <p class="birth-year">Born 1986</p>
       </div>
       
       <div class="contact-info">
-        <a href="mailto:contact@zjq.me" class="contact-item">
+        <a href="mailto:zjq426@gmail.com" class="contact-item">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
             <polyline points="22,6 12,13 2,6"/>
           </svg>
-          contact@zjq.me
+          zjq426@gmail.com
         </a>
         <a href="https://github.com/zhujiaqi" class="contact-item" target="_blank" rel="noopener noreferrer">
           <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
@@ -37,30 +63,67 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <section class="bio">
       <h2>About Me</h2>
       <p>
-        I'm a passionate developer who lives at the intersection of technology and innovation. 
-        With years of experience building web applications and exploring cutting-edge technologies, 
-        I've developed a deep appreciation for clean code, thoughtful architecture, and user-centric design.
+        I'm a seasoned full-stack developer with deep roots in backend engineering, having evolved 
+        from specializing in Python and Go to architecting comprehensive solutions across the entire stack. 
+        Since 2020, I've had the privilege of wearing multiple hats—from individual contributor to 
+        engineering team lead—across diverse industries including location-based services, e-commerce, 
+        and medical AI.
       </p>
       <p>
-        My journey in tech started with curiosity about how things work on the internet. 
-        That curiosity has evolved into a career where I get to solve complex problems, 
-        build scalable systems, and continuously learn from an amazing community of developers.
+        My entrepreneurial spirit led me to co-found a startup with friends, where we built and marketed 
+        our own brand of detox drinks and food products. This experience taught me invaluable lessons about 
+        product-market fit, customer acquisition, and the realities of running a business beyond just writing code.
       </p>
       <p>
-        When I'm not coding, you'll find me exploring new frameworks, contributing to open-source projects, 
-        or sharing insights about the latest developments in our field.
+        Most recently, I've been deeply immersed in the AI revolution—studying LLM architectures, 
+        experimenting with cutting-edge coding tools, and exploring frameworks like OpenClaude. My passion 
+        lies at the intersection of AI and developer productivity, constantly seeking ways to leverage 
+        intelligent tools to build better software faster.
       </p>
     </section>
 
-    <section class="current-status">
-      <h2>Current Status</h2>
-      <div class="status-card">
-        <span class="status-indicator">🟢</span>
-        <div>
-          <h3>Actively Building</h3>
+    <section class="experience">
+      <h2>Professional Journey</h2>
+      <div class="experience-grid">
+        <div class="experience-item">
+          <h3>🏢 Corporate Leadership</h3>
           <p>
-            Currently exploring the latest in AI-assisted development and modern web frameworks. 
-            Focused on building performant, accessible web experiences with Astro and TypeScript.
+            Led development teams while architecting scalable backend systems in Python and Go. 
+            Worked across location-based services, e-commerce platforms, and medical AI applications, 
+            gaining a broad perspective on how technology serves different industries.
+          </p>
+        </div>
+        <div class="experience-item">
+          <h3>🚀 AI Innovation</h3>
+          <p>
+            Currently developing an AI agent designed to democratize SaaS integration—transforming 
+            product requirements documents (PRDs) directly into working code. This project represents 
+            my belief in AI's potential to remove friction from the development process.
+          </p>
+        </div>
+        <div class="experience-item">
+          <h3>💼 Entrepreneurship</h3>
+          <p>
+            Co-founded a consumer health brand, taking it from concept to market. This venture 
+            complemented my technical expertise with business acumen and a deeper understanding 
+            of what it takes to build something from nothing.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="current-status">
+      <h2>Current Focus</h2>
+      <div class="status-card">
+        <span class="status-indicator">👶</span>
+        <div>
+          <h3>Full-Time Parent & Independent Explorer</h3>
+          <p>
+            I'm currently not employed and have no plans to work for someone else in the near future. 
+            My primary focus is caring for my newborn daughter—a role I cherish deeply. 
+            Between diaper changes and nap times, I'm dedicating my learning hours to understanding 
+            LLM models, testing emerging AI coding tools, and exploring the frontiers of what's possible 
+            with AI-assisted development.
           </p>
           <p class="status-updated">Last updated: March 2026</p>
         </div>
@@ -68,23 +131,27 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </section>
 
     <section class="what-i-do">
-      <h2>What I Do</h2>
+      <h2>Expertise & Interests</h2>
       <ul class="activity-list">
         <li>
+          <strong>Backend Engineering</strong>
+          <span>Python, Go, distributed systems, API design</span>
+        </li>
+        <li>
           <strong>Full-Stack Development</strong>
-          <span>Building end-to-end web applications with modern tech stacks</span>
+          <span>End-to-end application architecture, modern web frameworks</span>
         </li>
         <li>
-          <strong>Performance Optimization</strong>
-          <span>Making websites faster and more efficient</span>
+          <strong>AI & LLM Research</strong>
+          <span>Studying model architectures, prompt engineering, AI coding tools</span>
         </li>
         <li>
-          <strong>Technical Exploration</strong>
-          <span>Staying ahead of emerging trends in AI and web development</span>
+          <strong>Team Leadership</strong>
+          <span>Engineering management, mentoring, agile methodologies</span>
         </li>
         <li>
-          <strong>Knowledge Sharing</strong>
-          <span>Writing about learnings and best practices</span>
+          <strong>Entrepreneurship</strong>
+          <span>Product development, go-to-market strategy, customer discovery</span>
         </li>
       </ul>
     </section>
@@ -93,7 +160,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <style>
   .about-page {
-    max-width: 680px;
+    max-width: 720px;
   }
 
   .profile {
@@ -105,17 +172,28 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     margin-bottom: var(--space-lg);
   }
 
-  .avatar-placeholder {
-    width: 120px;
-    height: 120px;
+  .avatar-pixel-art {
+    width: 160px;
+    height: 160px;
     margin: 0 auto var(--space-lg);
-    color: var(--color-accent);
+    image-rendering: pixelated;
+  }
+
+  .avatar-pixel-art svg {
+    width: 100%;
+    height: 100%;
   }
 
   .tagline {
     color: var(--color-text-secondary);
     font-size: 1.125rem;
     margin-top: var(--space-sm);
+  }
+
+  .birth-year {
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+    margin-top: var(--space-xs);
   }
 
   .contact-info {
@@ -151,6 +229,33 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     margin-bottom: 0;
   }
 
+  .experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-lg);
+  }
+
+  .experience-item {
+    background-color: var(--color-bg-secondary);
+    padding: var(--space-lg);
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+  }
+
+  .experience-item h3 {
+    font-size: 1rem;
+    margin-bottom: var(--space-sm);
+    color: var(--color-text);
+  }
+
+  .experience-item p {
+    font-size: 0.9375rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+
   .current-status {
     background-color: var(--color-bg-secondary);
     padding: var(--space-lg);
@@ -165,11 +270,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   .status-indicator {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
   .status-card h3 {
-    margin-bottom: var(--space-xs);
+    margin-bottom: var(--space-sm);
     font-size: 1.125rem;
   }
 
@@ -197,6 +302,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     display: block;
     color: var(--color-text);
     margin-bottom: var(--space-xs);
+    font-size: 1rem;
   }
 
   .activity-list span {
