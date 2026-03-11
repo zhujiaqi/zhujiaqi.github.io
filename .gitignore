@@ -22,3 +22,23 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+*.swp
+*.swo
+*~
+
+# Testing
+playwright-report/
+test-results/
+coverage/
+
+# Temporary files
+*.tmp
+*.temp
+/tmp/
+
+# Build cache
+.vite/
