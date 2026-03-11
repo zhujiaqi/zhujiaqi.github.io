@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const blog = await getCollection('blog');
+  return blog.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<BaseLayout title={post.data.title} description={post.data.description}>
+  <article class="blog-post">
+    <header class="post-header">
+      <time datetime={post.data.pubDate.toISOString()} class="post-date">
+        {post.data.pubDate.toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        })}
+      </time>
+      <h1>{post.data.title}</h1>
+      {post.data.tags && post.data.tags.length > 0 && (
+        <ul class="post-tags">
+          {post.data.tags.map((tag) => (
+            <li class="tag">{tag}</li>
+          ))}
+        </ul>
+      )}
+    </header>
+
+    <div class="post-content">
+      <Content />
+    </div>
+
+    <footer class="post-footer">
+      <a href="/blog" class="back-link">← Back to all posts</a>
+    </footer>
+  </article>
+</BaseLayout>
+
+<style>
+  .blog-post { max-width: 680px; }
+  .post-header { margin-bottom: var(--space-2xl); }
+  .post-date { display: block; color: var(--color-text-muted); font-size: 0.875rem; margin-bottom: var(--space-sm); }
+  .post-tags { display: flex; flex-wrap: wrap; gap: var(--space-sm); list-style: none; padding: 0; margin-top: var(--space-md); }
+  .tag { background-color: var(--color-bg-secondary); color: var(--color-text-secondary); font-size: 0.75rem; padding: 0.25rem 0.5rem; border-radius: 4px; font-weight: 500; }
+  .post-content { margin-bottom: var(--space-2xl); }
+  .post-content :global(h2) { margin-top: var(--space-2xl); }
+  .post-content :global(h3) { margin-top: var(--space-xl); }
+  .post-content :global(p) { margin-bottom: var(--space-md); }
+  .post-footer { padding-top: var(--space-lg); border-top: 1px solid var(--color-border); }
+  .back-link { color: var(--color-text-secondary); font-size: 0.9375rem; }
+  .back-link:hover { color: var(--color-accent); }
+</style>
