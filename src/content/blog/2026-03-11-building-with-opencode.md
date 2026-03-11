@@ -69,7 +69,6 @@ OpenCode followed a disciplined workflow:
 5. **Self-Review**: Consulted Oracle agent for architecture validation
 
 ### 4. Challenges and Fixes
-### 4. Challenges and Fixes
 
 The development wasn't entirely smooth. We hit several bumps that required iteration:
 
