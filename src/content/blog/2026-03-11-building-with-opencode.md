@@ -6,7 +6,7 @@ tags: ["astro", "ai", "opencode", "automation", "web-development"]
 draft: false
 ---
 
-This website you're looking at was built almost entirely through AI-assisted development. I worked with [OpenCode](https://github.com/zhujiaqi/opencode) (my own AI orchestrator project) and Astro to create a fully functional, production-ready personal site in a single session. Here's how it happened.
+This website you're looking at was built almost entirely through AI-assisted development. I worked with [OpenCode](https://github.com/zhujiaqi/opencode) (my own AI orchestrator project) and Astro to create a fully functional, production-ready personal site in a single session. The LLM model powering this was **Qwen3.5 Plus** from Alibaba's Bailian platform. Here's how it happened.
 
 ## The Setup
 
@@ -69,14 +69,23 @@ OpenCode followed a disciplined workflow:
 5. **Self-Review**: Consulted Oracle agent for architecture validation
 
 ### 4. Challenges and Fixes
+### 4. Challenges and Fixes
 
-The development wasn't entirely smooth. We hit a few bumps:
+The development wasn't entirely smooth. We hit several bumps that required iteration:
 
-**Trailing Slash Bug**: Initially configured `trailingSlash: 'never'`, which caused 404s on blog posts. The fix was changing to `trailingSlash: 'ignore'` and updating all navigation links to use trailing slashes consistently.
+**Trailing Slash Nightmare**: This was honestly a stupid issue that consumed multiple commits. Initially configured `trailingSlash: 'never'`, which caused 404s on all blog posts because Astro's file-based routing creates `/blog/post-name/index.html` (which naturally has a trailing slash). The fix journey:
+1. First tried `trailingSlash: 'always'` - worked but felt verbose
+2. Then tried `trailingSlash: 'ignore'` to accept both - didn't work for directory routes
+3. Finally: updated ALL navigation links to use trailing slashes consistently (`/blog/` instead of `/blog`)
+4. Had to fix: nav bar, blog post links, AND back links
 
-**Config File Duplication**: Astro config got duplicated during edits, causing build failures. Required a clean rewrite.
+**Config File Duplication**: During edits, the `astro.config.mjs` file got duplicated content (I suspect a copy-paste error during one of the OpenCode tool calls). This caused cryptic Vite errors: `Identifier '__vite_ssr_export_default__' has already been declared`. The fix was straightforward but annoying: delete and rewrite the entire file.
 
-OpenCode handled these gracefully—each fix was tested, committed, and documented.
+**CSS Styling Issues**: The blog post content wasn't inheriting styles from the base layout because Astro's scoped CSS doesn't cascade into markdown-rendered content. Had to explicitly style every element (h2, h3, p, blockquote, code, pre, ul, ol, etc.) in the blog post template. Not elegant, but necessary.
+
+**Build Cache Problems**: Several build failures were resolved by clearing `node_modules/.vite` and rebuilding. Classic "have you tried turning it off and on again" but for build tools.
+
+OpenCode handled these gracefully—each fix was tested, committed, and documented with honest messages about what went wrong.
 
 ### 5. Final Deliverables
 
