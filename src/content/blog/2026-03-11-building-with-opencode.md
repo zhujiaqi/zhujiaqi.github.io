@@ -6,7 +6,9 @@ tags: ["astro", "ai", "opencode", "automation", "web-development"]
 draft: false
 ---
 
-This website you're looking at was built almost entirely through AI-assisted development. I worked with [OpenCode](https://github.com/zhujiaqi/opencode) (my own AI orchestrator project) and Astro to create a fully functional, production-ready personal site in a single session. The LLM model powering this was **Qwen3.5 Plus** from Alibaba's Bailian platform. Here's how it happened.
+This website you're looking at was built almost entirely through AI-assisted development. I worked with [OpenCode](https://opencode.ai), an open-source alternative to Anthropic's Claude Code and Astro to create a fully functional, production-ready personal site in a single session. The LLM model powering this was **Qwen3.5 Plus** from Alibaba's Bailian platform. Here's how it happened.
+
+**Why OpenCode?** I chose [OpenCode](https://opencode.ai) over Claude Code because it's open-source (MIT licensed), model-agnostic (works with 75+ LLM providers including Qwen), and doesn't lock you into a single vendor's ecosystem. Think of it as the open-source answer to Anthropic's Claude Code - same terminal-based AI agent workflow, but you control the models and infrastructure.
 
 ## The Setup
 
@@ -127,7 +129,7 @@ Here's what OpenCode produced in one session:
 
 This wasn't just about building a website—it was a proof of concept for AI-assisted development done right. Key takeaways:
 
-1. **AI as Orchestrator, Not Just Code Generator**: OpenCode didn't just write code; it planned, researched, delegated, tested, and verified.
+1. **AI as Orchestrator, Not Just Code Generator**: OpenCode (like Claude Code) didn't just write code; it planned, researched, delegated, tested, and verified. It's a terminal-based AI agent that can understand codebases, run commands, and ship features.
 
 2. **Best Practices by Default**: Because OpenCode researched before implementing, the result follows community best practices without me having to specify every detail.
 
