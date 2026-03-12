@@ -1,0 +1,139 @@
+---
+// Retro Guestbook/Bulletin Board Component
+export interface BulletinEntry {
+  author: string;
+  date: string;
+  message: string;
+}
+
+export interface Props {
+  entries?: BulletinEntry[];
+}
+
+const { entries = [
+  {
+    author: "WebMaster",
+    date: "March 1999",
+    message: "Welcome to my homepage! Please sign my guestbook and come back soon! ★"
+  },
+  {
+    author: "CoolSurfer99",
+    date: "March 12, 1999",
+    message: "Awesome site dude! Love the design. Check out my GeoCities page too!"
+  },
+  {
+    author: "NetNavigator",
+    date: "March 11, 1999",
+    message: "First time visitor here. Your page is totally rad! Added to my favorites."
+  }
+]} = Astro.props;
+---
+
+<div class="guestbook">
+  <div class="guestbook-header">
+    ✍️ Sign My Guestbook!
+  </div>
+  
+  <div class="guestbook-entries">
+    {entries.map((entry) => (
+      <div class="bulletin-entry">
+        <div class="bulletin-header">
+          <span class="bulletin-author">{entry.author}</span>
+          <span class="bulletin-date"> - {entry.date}</span>
+        </div>
+        <div class="bulletin-message">
+          {entry.message}
+        </div>
+      </div>
+    ))}
+  </div>
+  
+  <div class="guestbook-form">
+    <p style="font-family: 'Comic Sans MS', cursive; font-weight: bold; color: #000080;">
+      Want to sign my guestbook? Email me at: <a href="mailto:zjq426@gmail.com" style="color: #ff0000;">zjq426@gmail.com</a>
+    </p>
+    <p style="font-size: 0.875rem; color: #808080; font-family: 'Courier New', monospace;">
+      (Guestbook form coming soon! For now, send me an email!)
+    </p>
+  </div>
+</div>
+
+<style>
+  .guestbook {
+    background: #c0c0c0;
+    border: 3px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    padding: 16px;
+    margin: 24px 0;
+  }
+
+  .guestbook-header {
+    background: linear-gradient(to right, #000080, #0000ff);
+    color: #ffffff;
+    padding: 8px;
+    margin: -16px -16px 16px -16px;
+    font-family: "Comic Sans MS", cursive;
+    font-weight: bold;
+    font-size: 1.25rem;
+    text-shadow: 1px 1px 0 #000000;
+  }
+
+  .guestbook-entries {
+    margin-bottom: 24px;
+  }
+
+  .bulletin-entry {
+    background: #ffffff;
+    border: 2px solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+
+  .bulletin-header {
+    margin-bottom: 8px;
+  }
+
+  .bulletin-author {
+    color: #000080;
+    font-weight: bold;
+    font-family: "Comic Sans MS", cursive;
+    font-size: 1rem;
+  }
+
+  .bulletin-date {
+    color: #808080;
+    font-size: 0.75rem;
+    font-family: "Courier New", monospace;
+  }
+
+  .bulletin-message {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .guestbook-form {
+    background: #e0e0e0;
+    border: 2px solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+    padding: 16px;
+    text-align: center;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .guestbook {
+      background: #808080;
+      border-color: #c0c0c0 #404040 #404040 #c0c0c0;
+    }
+
+    .bulletin-entry {
+      background: #c0c0c0;
+      border-color: #404040 #ffffff #ffffff #404040;
+    }
+
+    .guestbook-form {
+      background: #a0a0a0;
+    }
+  }
+</style>

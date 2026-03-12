@@ -1,0 +1,62 @@
+---
+// Retro Visitor Counter Component
+---
+
+<div class="visitor-counter-wrapper">
+  <div class="visitor-counter" id="visitor-counter">
+    <span class="visitor-counter-label">You Are Visitor Number:</span>
+    <span id="visitor-count">000000</span>
+  </div>
+</div>
+
+<script>
+  // Visitor counter with localStorage persistence
+  (function() {
+    const counterElement = document.getElementById('visitor-count');
+    if (!counterElement) return;
+    
+    // Get current count from localStorage or initialize
+    let count = parseInt(localStorage.getItem('visitorCount')) || 0;
+    
+    // Increment count
+    count++;
+    localStorage.setItem('visitorCount', count.toString());
+    
+    // Display with leading zeros
+    counterElement.textContent = count.toString().padStart(6, '0');
+  })();
+</script>
+
+<style>
+  .visitor-counter-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 16px 0;
+  }
+
+  .visitor-counter {
+    background: #000000;
+    color: #ff0000;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1.5rem;
+    padding: 8px 24px;
+    border: 3px solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .visitor-counter-label {
+    font-size: 0.75rem;
+    color: #ffffff;
+    display: block;
+    margin-bottom: 4px;
+    font-family: "Comic Sans MS", cursive;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .visitor-counter {
+      border-color: #404040 #c0c0c0 #c0c0c0 #404040;
+    }
+  }
+</style>
