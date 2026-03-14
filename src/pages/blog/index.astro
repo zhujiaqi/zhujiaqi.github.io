@@ -7,13 +7,10 @@ const posts = (await getCollection('blog', ({ data }) => {
 })).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
-<BaseLayout title="Blog" description="Articles about technology, web development, and AI">
+<BaseLayout title="Blog" description="Technical articles and implementation guides on distributed systems, web development, and AI">
   <section class="blog-page">
     <header class="blog-header">
       <h1>Blog</h1>
-      <p class="blog-intro">
-        Thoughts on web development, AI, and the ever-evolving tech landscape.
-      </p>
     </header>
 
     <ul class="post-list">
@@ -54,9 +51,11 @@ const posts = (await getCollection('blog', ({ data }) => {
     margin-bottom: var(--space-2xl);
   }
 
-  .blog-intro {
-    color: var(--color-text-secondary);
-    font-size: 1.125rem;
+  .blog-header h1 {
+    background: none;
+    border: none;
+    padding: 0;
+    text-shadow: none;
   }
 
   .post-list {

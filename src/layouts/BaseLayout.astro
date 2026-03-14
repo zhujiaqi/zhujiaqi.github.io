@@ -5,6 +5,15 @@ export interface Props {
   image?: string;
   canonicalURL?: string;
   noindex?: boolean;
+  headContent?: string;
+  softwareSourceCode?: {
+    name: string;
+    description: string;
+    programmingLanguage: string;
+    codeRepository: string;
+    keywords: string[];
+    runtimePlatform?: string;
+  };
 }
 
 const {
@@ -12,7 +21,9 @@ const {
   description = "Personal site of a tech enthusiast exploring the latest in web development and AI.",
   image = "/og-image.svg",
   canonicalURL,
-  noindex = false
+  noindex = false,
+  headContent,
+  softwareSourceCode
 } = Astro.props;
 
 const siteUrl = 'https://zjq.me';
@@ -55,7 +66,66 @@ const fullUrl = canonicalURL || Astro.url?.href || siteUrl;
     <meta name="generator" content="Astro v6.0.2" />
     <link rel="alternate" type="application/rss+xml" title="My Personal Blog" href="https://zjq.me/rss.xml" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <!-- JSON-LD: Person Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "@id": "https://zjq.me/#person",
+        "name": "Zhu Jiaqi",
+        "url": "https://zjq.me",
+        "image": "https://zjq.me/og-image.svg",
+        "sameAs": [
+          "https://github.com/zhujiaqi",
+          "https://www.linkedin.com/in/zhujiaqi"
+        ],
+        "jobTitle": "Full-Stack Developer",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Independent"
+        },
+        "alumniOf": {
+          "@type": "Organization",
+          "name": "University"
+        },
+        "knowsAbout": [
+          "Distributed Systems",
+          "Redis Internal Architectures",
+          "Go Backend Engineering",
+          "Python",
+          "Full-Stack Development",
+          "AI & LLM Research",
+          "System Architecture",
+          "API Design"
+        ],
+        "email": "mailto:zjq426@gmail.com"
+      }
+    </script>
   </head>
+  <body>
+    {softwareSourceCode && (
+      <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "SoftwareSourceCode",
+        "name": softwareSourceCode.name,
+        "description": softwareSourceCode.description,
+        "programmingLanguage": {
+          "@type": "ComputerLanguage",
+          "name": softwareSourceCode.programmingLanguage
+        },
+        "codeRepository": softwareSourceCode.codeRepository,
+        "runtimePlatform": softwareSourceCode.runtimePlatform,
+        "keywords": softwareSourceCode.keywords.join(", "),
+        "author": {
+          "@type": "Person",
+          "name": "Zhu Jiaqi",
+          "url": "https://zjq.me"
+        },
+        "isAccessibleForFree": true,
+        "codeSampleType": "open-source"
+      })} />
+    )}
   <body>
     <header>
       <nav>

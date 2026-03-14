@@ -14,7 +14,11 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<BaseLayout title={post.data.title} description={post.data.description}>
+<BaseLayout 
+  title={post.data.title} 
+  description={post.data.description}
+  softwareSourceCode={post.data.projectSchema}
+>
   <article class="blog-post">
     <div class="post-header-wrapper">
       <time datetime={post.data.pubDate.toISOString()} class="post-date">

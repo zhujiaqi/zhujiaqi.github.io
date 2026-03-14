@@ -8,6 +8,14 @@ const blog = defineCollection({
   schema: rssSchema.extend({
     tags: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
+    projectSchema: z.object({
+      name: z.string(),
+      description: z.string(),
+      programmingLanguage: z.string(),
+      codeRepository: z.string(),
+      keywords: z.array(z.string()),
+      runtimePlatform: z.string().optional()
+    }).optional()
   }),
 });
 
