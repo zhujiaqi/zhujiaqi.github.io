@@ -5,27 +5,9 @@
 <div class="visitor-counter-wrapper">
   <div class="visitor-counter" id="visitor-counter">
     <span class="visitor-counter-label">You Are Visitor Number:</span>
-    <span id="visitor-count">000000</span>
+    <span id="visitor-count" data-visitor-count data-format="pad6">------</span>
   </div>
 </div>
-
-<script>
-  // Visitor counter with localStorage persistence
-  (function() {
-    const counterElement = document.getElementById('visitor-count');
-    if (!counterElement) return;
-    
-    // Get current count from localStorage or initialize
-    let count = parseInt(localStorage.getItem('visitorCount')) || 0;
-    
-    // Increment count
-    count++;
-    localStorage.setItem('visitorCount', count.toString());
-    
-    // Display with leading zeros
-    counterElement.textContent = count.toString().padStart(6, '0');
-  })();
-</script>
 
 <style>
   .visitor-counter-wrapper {

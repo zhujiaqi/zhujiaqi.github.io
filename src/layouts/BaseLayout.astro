@@ -140,7 +140,7 @@ const fullUrl = canonicalURL || Astro.url?.href || siteUrl;
     </header>
     <main><slot /></main>
     <footer>
-      <p>&copy; {new Date().getFullYear()} · Built with <a href="https://astro.build">Astro</a></p>
+      <p>&copy; {new Date().getFullYear()} · Built with <a href="https://astro.build">Astro</a> · <span data-visitor-count>—</span> visitors so far</p>
     </footer>
     <script>
       (function() {
@@ -169,6 +169,7 @@ const fullUrl = canonicalURL || Astro.url?.href || siteUrl;
         }
       })();
     </script>
+  <script is:inline src="/visitor.js" defer></script>
   </body>
 
 <style is:global>

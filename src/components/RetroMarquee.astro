@@ -1,16 +1,15 @@
 ---
 // Retro Marquee Component
 export interface Props {
-  visitorNumber?: string;
   lastUpdated?: string;
 }
 
-const { visitorNumber = '000001', lastUpdated = 'Today' } = Astro.props;
+const { lastUpdated = 'Today' } = Astro.props;
 ---
 
 <div class="retro-marquee">
   <div class="retro-marquee-content">
-    ★ Welcome To My Homepage! ★ You Are Visitor #{visitorNumber} ★ Last Updated: {lastUpdated} ★ Thanks For Stopping By! ★
+    ★ Welcome To My Homepage! ★ You Are Visitor #<span data-visitor-count data-format="pad6">------</span> ★ Last Updated: {lastUpdated} ★ Thanks For Stopping By! ★
   </div>
 </div>
 
