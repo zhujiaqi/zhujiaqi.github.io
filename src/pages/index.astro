@@ -1,22 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import RetroCounter from '../components/RetroCounter.astro';
-import RetroMarquee from '../components/RetroMarquee.astro';
-import RetroGuestbook from '../components/RetroGuestbook.astro';
-import RetroBadges from '../components/RetroBadges.astro';
-import RetroConstruction from '../components/RetroConstruction.astro';
 ---
 
 <BaseLayout title="Zhu Jiaqi" description="Full-stack developer specializing in Python, Go, and AI-powered solutions">
   <div class="about-page">
-    <!-- Retro elements - only visible in retro theme -->
-    <div class="retro-elements">
-      <RetroBadges />
-      <RetroCounter />
-      <RetroMarquee lastUpdated="March 2026" />
-      <RetroConstruction />
-      <hr />
-    </div>
     
     <section class="profile">
       <div class="profile-header">
@@ -242,10 +229,6 @@ import RetroConstruction from '../components/RetroConstruction.astro';
       </div>
     </section>
 
-    <!-- Retro Guestbook - only visible in retro theme -->
-    <div class="retro-elements">
-      <RetroGuestbook />
-    </div>
   </div>
 </BaseLayout>
 
@@ -395,67 +378,6 @@ import RetroConstruction from '../components/RetroConstruction.astro';
   .fp-card .project-description { flex: 1; }
   .fp-card .project-links { margin-top: auto; }
   @media (max-width: 640px) { .fp-arrows { display: none; } }
-  .retro-theme .fp-arrow { background: #c0c0c0; border: 2px outset #ffffff; color: #000000; border-radius: 0; }
-  .retro-theme .fp-arrow:hover { background: #ffff00; color: #000000; }
-  /* Retro elements */
-  .retro-elements { display: none; }
-  .retro-theme .retro-elements { display: block; }
-  .retro-theme .profile, .retro-theme .bio, .retro-theme .experience, .retro-theme .current-status, .retro-theme .what-i-do { 
-    background: #c0c0c0; 
-    border: 2px solid; 
-    border-color: #ffffff #808080 #808080 #ffffff; 
-    padding: 16px; 
-    margin-bottom: 24px; 
-  }
-  .retro-theme .experience-grid { display: block; }
-  .retro-theme .experience-item { margin-bottom: 16px; }
-  .retro-theme .status-card { display: block; }
-  .retro-theme .featured-project {
-    background: linear-gradient(to right, #000080, #0000ff);
-    border: 3px outset #ffffff;
-    color: #ffffff;
-    padding: 16px;
-    box-shadow: 3px 3px 0 #000000;
-  }
-  .retro-theme .featured-project h2 {
-    background: transparent;
-    color: #ffff00;
-    border: 2px inset #ffffff;
-    padding: 8px 16px;
-    display: inline-block;
-    margin-bottom: 16px;
-    text-shadow: 2px 2px 0 #ff0000;
-  }
-  .retro-theme .project-card {
-    background: #ffffff;
-    border: 2px inset #808080;
-    color: #000000;
-    padding: 16px;
-  }
-  .retro-theme .project-title-link {
-    color: #0000ff;
-    text-decoration: underline;
-  }
-  .retro-theme .project-title-link:hover {
-    background: #ffff00;
-    color: #000000;
-    text-decoration: none;
-  }
-  .retro-theme .project-description {
-    color: #000000;
-    font-family: "Times New Roman", serif;
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-  .retro-theme .project-link {
-    color: #0000ff;
-    text-decoration: underline;
-  }
-  .retro-theme .project-link:hover {
-    background: #000080;
-    color: #ffffff;
-    text-decoration: none;
-  }
   /* ===== EDITORIAL MODERN: HOMEPAGE ===== */
   .about-page { max-width: none; counter-reset: section; }
   .about-page > section { margin-bottom: 3rem; }
@@ -502,32 +424,6 @@ import RetroConstruction from '../components/RetroConstruction.astro';
   .project-link:hover { text-decoration: underline; text-underline-offset: 3px; }
   .fp-card .project-links { gap: 1rem; }
 
-  /* ===== CLASSIC: HOMEPAGE ===== */
-  .retro-theme .about-page { counter-reset: none; }
-  .retro-theme .about-page > section:not(.profile) { counter-increment: none; }
-  .retro-theme .about-page > section:not(.profile) > h2::before,
-  .retro-theme .featured-projects .fp-head h2::before { content: none; }
-  .retro-theme .about-page > section + section { border-top: 4px ridge #c0c0c0; }
-  .retro-theme .profile { display: block; text-align: center; }
-  .retro-theme .profile-header { display: block; }
-  .retro-theme .avatar-pixel-art { margin: 0 auto 10px; }
-  .retro-theme .tagline, .retro-theme .birth-year { font-family: "Times New Roman", Times, serif; text-transform: none; letter-spacing: 0; }
-  .retro-theme .contact-info { justify-content: center; }
-  .retro-theme .contact-item { font-family: "Times New Roman", Times, serif; text-transform: none; letter-spacing: 0; }
-  .retro-theme .bio p { font-size: 16px; line-height: 1.55; }
-  .retro-theme .bio p:first-child::first-letter { float: none; font-size: inherit; line-height: inherit; color: inherit; padding: 0; }
-  .retro-theme .experience-grid { display: block; }
-  .retro-theme .experience-item { border: 2px inset #c0c0c0; background: #ffffcc; }
-  .retro-theme .current-status { border: 2px inset #c0c0c0; background: #ffffcc; padding: 10px; }
-  .retro-theme .activity-list li { border-bottom: 1px dashed #000080; }
-  .retro-theme .activity-list strong { font-family: Arial, sans-serif; font-weight: 700; }
-  .retro-theme .activity-list span { font-size: 14px; }
-  .retro-theme .fp-card { border: 2px inset #808080; background: #ffffff; }
-  .retro-theme .project-title-link { font-family: "Comic Sans MS", cursive; }
-  .retro-theme .project-language, .retro-theme .project-platform { background: #000080; color: #ffff00; border: 1px solid #000; font-size: 9px; }
-  .retro-theme .project-description { font-size: 14px; }
-  .retro-theme .project-link { font-family: "Times New Roman", Times, serif; font-size: 13px; text-transform: none; letter-spacing: 0; }
-
   @media (max-width: 700px) {
     .profile { display: block; text-align: left; }
     .experience-grid { grid-template-columns: 1fr; }
@@ -541,7 +437,5 @@ import RetroConstruction from '../components/RetroConstruction.astro';
 </style>
 
 <style is:global>
-  .retro-elements { display: none; }
-  .retro-theme .retro-elements { display: block; }
 
 </style>
