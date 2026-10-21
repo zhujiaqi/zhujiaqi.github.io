@@ -157,42 +157,83 @@ import RetroGuestbook from '../components/RetroGuestbook.astro';
       </ul>
     </section>
 
-    <section class="featured-project">
-      <h2>Featured Project</h2>
-      <div class="project-card">
+    <section class="featured-project featured-projects">
+      <div class="fp-head">
+        <h2>Featured Projects</h2>
+        <div class="fp-arrows">
+          <button type="button" class="fp-arrow" data-dir="-1" aria-label="Previous projects">←</button>
+          <button type="button" class="fp-arrow" data-dir="1" aria-label="Next projects">→</button>
+        </div>
+      </div>
+      <div class="fp-track" id="fp-track" tabindex="0" aria-label="Featured projects, scroll horizontally">
+      <article class="project-card fp-card">
         <div class="project-header">
-          <h3>
-            <a href="/blog/2026-03-14-redis-tree-implementation/" class="project-title-link">
-              redigo-tree
-            </a>
-          </h3>
+          <h3><a href="https://github.com/zhujiaqi/dsh-secret-paste" target="_blank" rel="noopener noreferrer" class="project-title-link">DSH Secret Paste</a></h3>
+          <div class="project-meta">
+            <span class="project-language">JavaScript</span>
+            <span class="project-platform">DeepSeek Harness</span>
+          </div>
+        </div>
+        <p class="project-description">A DeepSeek Harness plugin that detects secrets pasted into the composer, stores them in the official credentials seam, and sends only [secret:REF] placeholders to the model — the plaintext never reaches the transcript.</p>
+        <div class="project-links">
+          <a href="https://github.com/zhujiaqi/dsh-secret-paste" target="_blank" rel="noopener noreferrer" class="project-link"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> GitHub</a>
+          <a href="https://www.npmjs.com/package/dsh-secret-paste" target="_blank" rel="noopener noreferrer" class="project-link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> npm</a>
+        </div>
+      </article>
+      <article class="project-card fp-card">
+        <div class="project-header">
+          <h3><a href="https://github.com/zhujiaqi/bjcp-styles-toolkit" target="_blank" rel="noopener noreferrer" class="project-title-link">BJCP Styles Toolkit</a></h3>
+          <div class="project-meta">
+            <span class="project-language">Python</span>
+            <span class="project-platform">Cloudflare Pages</span>
+          </div>
+        </div>
+        <p class="project-description">Local-first BJCP style database and bilingual web UI. Builds SQLite from the official Markdown source, keeps Chinese translations in sync through content hashes, and deploys as a password-optional Cloudflare Pages site.</p>
+        <div class="project-links">
+          <a href="https://github.com/zhujiaqi/bjcp-styles-toolkit" target="_blank" rel="noopener noreferrer" class="project-link"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> GitHub</a>
+          <a href="https://bjcp.zjq.me" target="_blank" rel="noopener noreferrer" class="project-link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Live demo</a>
+        </div>
+      </article>
+      <article class="project-card fp-card">
+        <div class="project-header">
+          <h3><a href="https://github.com/zhujiaqi/bjcp-styles-skill" target="_blank" rel="noopener noreferrer" class="project-title-link">BJCP Styles Skill</a></h3>
+          <div class="project-meta">
+            <span class="project-language">AI Skill</span>
+            <span class="project-platform">Python + SQLite</span>
+          </div>
+        </div>
+        <p class="project-description">Agent skill for querying 145 BJCP beer, mead and cider styles offline — descriptions, vital statistics and comparisons — without shipping any guideline data. Works with Claude Code and DeepSeek Harness.</p>
+        <div class="project-links">
+          <a href="https://github.com/zhujiaqi/bjcp-styles-skill" target="_blank" rel="noopener noreferrer" class="project-link"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> GitHub</a>
+        </div>
+      </article>
+      <article class="project-card fp-card">
+        <div class="project-header">
+          <h3><a href="https://github.com/zhujiaqi/craft-beer-watch" target="_blank" rel="noopener noreferrer" class="project-title-link">Craft Beer Watch</a></h3>
+          <div class="project-meta">
+            <span class="project-language">AI Skill</span>
+            <span class="project-platform">Python</span>
+          </div>
+        </div>
+        <p class="project-description">Personal craft-beer watch skill: build a taste profile, then track high-scoring releases and find same-style beers worth trying, with strict package and version rules so ratings never get merged across formats.</p>
+        <div class="project-links">
+          <a href="https://github.com/zhujiaqi/craft-beer-watch" target="_blank" rel="noopener noreferrer" class="project-link"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> GitHub</a>
+        </div>
+      </article>
+      <article class="project-card fp-card">
+        <div class="project-header">
+          <h3><a href="https://github.com/zhujiaqi/redigo-tree" target="_blank" rel="noopener noreferrer" class="project-title-link">redigo-tree</a></h3>
           <div class="project-meta">
             <span class="project-language">Go</span>
             <span class="project-platform">Redis</span>
           </div>
         </div>
-        <p class="project-description">
-          A robust tree structure implementation for Redis using Lua scripting for atomic operations. 
-          Achieves O(1) sibling insertions, O(log n) path traversal, and guaranteed consistency without distributed locks.
-        </p>
+        <p class="project-description">A robust tree structure implementation for Redis using Lua scripting for atomic operations. Achieves O(1) sibling insertions, O(log n) path traversal, and guaranteed consistency without distributed locks.</p>
         <div class="project-links">
-          <a href="https://github.com/zhujiaqi/redigo-tree" target="_blank" rel="noopener noreferrer" class="project-link">
-            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-            </svg>
-            View on GitHub
-          </a>
-          <a href="/blog/2026-03-14-redis-tree-implementation/" class="project-link">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <polyline points="14 2 14 8 20 8"/>
-              <line x1="16" y1="13" x2="8" y2="13"/>
-              <line x1="16" y1="17" x2="8" y2="17"/>
-              <polyline points="10 9 9 9 8 9"/>
-            </svg>
-            Read Technical Deep Dive
-          </a>
+          <a href="https://github.com/zhujiaqi/redigo-tree" target="_blank" rel="noopener noreferrer" class="project-link"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> GitHub</a>
+          <a href="/blog/2026-03-14-redis-tree-implementation/" class="project-link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg> Read the deep dive</a>
         </div>
+      </article>
       </div>
     </section>
 
@@ -202,6 +243,26 @@ import RetroGuestbook from '../components/RetroGuestbook.astro';
     </div>
   </div>
 </BaseLayout>
+
+<script>
+  (() => {
+    const track = document.getElementById('fp-track');
+    if (!track) return;
+    const prev = document.querySelector('.fp-arrow[data-dir="-1"]');
+    const next = document.querySelector('.fp-arrow[data-dir="1"]');
+    const step = () => Math.max(300, Math.round(track.clientWidth * 0.85));
+    const sync = () => {
+      const max = track.scrollWidth - track.clientWidth;
+      if (prev) prev.disabled = track.scrollLeft <= 2;
+      if (next) next.disabled = track.scrollLeft >= max - 2;
+    };
+    if (prev) prev.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' }));
+    if (next) next.addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' }));
+    track.addEventListener('scroll', sync, { passive: true });
+    window.addEventListener('resize', sync);
+    sync();
+  })();
+</script>
 
 <style>
   .about-page { max-width: 720px; }
@@ -316,6 +377,21 @@ import RetroGuestbook from '../components/RetroGuestbook.astro';
     height: 16px;
   }
   
+  /* Featured Projects carousel */
+  .featured-projects .fp-head { display: flex; align-items: center; justify-content: space-between; gap: var(--space-md); margin-bottom: var(--space-md); }
+  .featured-projects .fp-head h2 { margin: 0; }
+  .fp-arrows { display: flex; gap: 8px; }
+  .fp-arrow { width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--color-border); background: var(--color-bg); color: var(--color-text); cursor: pointer; font-size: 1rem; line-height: 1; display: flex; align-items: center; justify-content: center; }
+  .fp-arrow:hover { border-color: var(--color-accent); color: var(--color-accent); }
+  .fp-arrow:disabled { opacity: 0.35; cursor: default; }
+  .fp-track { display: flex; gap: var(--space-md); overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; padding: 2px 2px 10px; scrollbar-width: thin; }
+  .fp-track:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+  .fp-card { flex: 0 0 min(340px, 82vw); margin-top: 0; scroll-snap-align: start; display: flex; flex-direction: column; }
+  .fp-card .project-description { flex: 1; }
+  .fp-card .project-links { margin-top: auto; }
+  @media (max-width: 640px) { .fp-arrows { display: none; } }
+  .retro-theme .fp-arrow { background: #c0c0c0; border: 2px outset #ffffff; color: #000000; border-radius: 0; }
+  .retro-theme .fp-arrow:hover { background: #ffff00; color: #000000; }
   /* Retro elements */
   .retro-elements { display: none; }
   .retro-theme .retro-elements { display: block; }
